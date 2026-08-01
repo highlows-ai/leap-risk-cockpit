@@ -21,3 +21,18 @@ NOTES:
   - ATM + short time → gamma instability zone
   - High IV → delta lies
   - IV crush → LEAP diverges from stock
+
+DELTA SURFACE (ASCII GRID)
+-----------------------------------------
+| Expiry → | Deep ITM | ATM | OTM |
+-----------------------------------------
+| 2.0 yrs  |   0.90    | 0.55 | 0.20 |
+| 1.0 yrs  |   0.88    | 0.52 | 0.15 |
+| 0.5 yrs  |   0.92    | 0.50 | 0.10 |
+| 0.25 yrs |   0.95    | 0.48 | 0.05 |
+| 0.10 yrs |   0.97    | 0.45 | 0.02 |
+-----------------------------------------
+Notes:
+- Deep ITM delta rises as expiry shortens (gamma blowout zone)
+- ATM delta becomes unstable as expiry shortens
+- OTM delta collapses as expiry shortens

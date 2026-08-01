@@ -17,10 +17,26 @@ def classify_regime(iv, rate_trend, time):
         return "late"
     return "unknown"
 
+def print_delta_surface(schema):
+    print("\nDELTA SURFACE")
+    print("-----------------------------------------")
+    print("| Expiry → | Deep ITM |  ATM  |  OTM  |")
+    print("-----------------------------------------")
+
+    for row in schema["delta_surface_data"]:
+        print(f"| {row['expiry']:>6} yrs |   {row['deep_itm']:.2f}    | {row['atm']:.2f} | {row['otm']:.2f} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Deep ITM delta rises as expiry shortens (gamma blowout zone)")
+    print("- ATM delta becomes unstable as expiry shortens")
+    print("- OTM delta collapses as expiry shortens")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
     print("Regimes:", ", ".join(schema["regimes"].keys()))
+    print_delta_surface(schema)
 
 if __name__ == "__main__":
     main()

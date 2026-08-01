@@ -11,5 +11,12 @@
     "delta_surface": { "axes": ["moneyness", "time"], "metric": "delta" },
     "gamma_surface": { "axes": ["moneyness", "time"], "metric": "gamma" },
     "vega_surface":  { "axes": ["moneyness", "time"], "metric": "vega" }
-  }
+  },
+  "delta_surface_data": [
+    { "expiry": 2.0,  "deep_itm": 0.90, "atm": 0.55, "otm": 0.20 },
+    { "expiry": 1.0,  "deep_itm": 0.88, "atm": 0.52, "otm": 0.15 },
+    { "expiry": 0.5,  "deep_itm": 0.92, "atm": 0.50, "otm": 0.10 },
+    { "expiry": 0.25, "deep_itm": 0.95, "atm": 0.48, "otm": 0.05 },
+    { "expiry": 0.10, "deep_itm": 0.97, "atm": 0.45, "otm": 0.02 }
+  ]
 }
