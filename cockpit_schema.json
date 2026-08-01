@@ -1,0 +1,15 @@
+{
+  "underlying": "AAPL",
+  "regimes": {
+    "calm":      { "iv": "low",  "rates": "stable",  "time": "long" },
+    "volatile":  { "iv": "high", "rates": "stable",  "time": "long" },
+    "rate":      { "iv": "low",  "rates": "rising",  "time": "long" },
+    "compress":  { "iv": "high", "rates": "falling", "time": "long" },
+    "late":      { "iv": "any",  "rates": "any",     "time": "short" }
+  },
+  "panels": {
+    "delta_surface": { "axes": ["moneyness", "time"], "metric": "delta" },
+    "gamma_surface": { "axes": ["moneyness", "time"], "metric": "gamma" },
+    "vega_surface":  { "axes": ["moneyness", "time"], "metric": "vega" }
+  }
+}

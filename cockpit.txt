@@ -1,0 +1,23 @@
+LEAP RISK COCKPIT — v0.1 (ASCII Edition)
+
+REGIMES:
+  Calm:      low IV, stable rates, long time → LEAP ≈ stock
+  Volatile:  high IV, stable rates, long time → vega-dominated
+  Rate:      low IV, rising rates → forward-tilt
+  Compress:  high IV, falling rates → forward-collapse
+  Late:      short time → gamma-blowout
+
+PIPES:
+  Spot | IV | Rates | Time | Forward | Gamma | Dealer Hedging | Liquidity | Skew
+
+PANELS:
+  Delta Surface:  time × moneyness
+  Gamma Surface:  time × moneyness
+  Vega Surface:   time × moneyness
+
+NOTES:
+  - Deep ITM + long time → synthetic stock zone
+  - ATM + long time → convexity zone
+  - ATM + short time → gamma instability zone
+  - High IV → delta lies
+  - IV crush → LEAP diverges from stock
