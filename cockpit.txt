@@ -36,3 +36,18 @@ Notes:
 - Deep ITM delta rises as expiry shortens (gamma blowout zone)
 - ATM delta becomes unstable as expiry shortens
 - OTM delta collapses as expiry shortens
+
+IV CRUSH PANEL
+-----------------------------------------
+| Regime Transition   | IV Move | Price |
+-----------------------------------------
+| volatile → calm     |   ↓↓↓   |  ↑↑   |
+| compress → calm     |   ↓↓↓   |  ↑↑↑  |
+| rate → calm         |   ↓     |  ↑    |
+| panic → calm (meta) |   ↓↓↓   |  ↑    |
+-----------------------------------------
+Notes:
+- Rallies reduce uncertainty → IV falls.
+- IV falls → extrinsic value collapses.
+- Short-dated options suffer the worst crush.
+- LEAPS dampen crush but do not eliminate it.

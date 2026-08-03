@@ -18,5 +18,11 @@
     { "expiry": 0.5,  "deep_itm": 0.92, "atm": 0.50, "otm": 0.10 },
     { "expiry": 0.25, "deep_itm": 0.95, "atm": 0.48, "otm": 0.05 },
     { "expiry": 0.10, "deep_itm": 0.97, "atm": 0.45, "otm": 0.02 }
+  ],
+  "iv_crush_transitions": [
+    { "from": "volatile", "to": "calm",    "iv_move": "down_hard", "price_move": "up_medium" },
+    { "from": "compress", "to": "calm",    "iv_move": "down_hard", "price_move": "up_strong" },
+    { "from": "rate",     "to": "calm",    "iv_move": "down_small","price_move": "up_small" }
   ]
 }
+
