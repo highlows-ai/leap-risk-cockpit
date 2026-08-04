@@ -49,12 +49,30 @@ def print_iv_crush_panel(schema):
     print("- Short-dated options suffer the worst crush.")
     print("- LEAPS dampen crush but do not eliminate it.")
 
+def print_iv_spike_panel(schema):
+    print("\nIV SPIKE PANEL")
+    print("-----------------------------------------")
+    print("| Regime Transition   | IV Move   | Price Move |")
+    print("-----------------------------------------")
+
+    for row in schema["iv_spike_transitions"]:
+        label = f"{row['from']} → {row['to']}"
+        print(f"| {label:<18} | {row['iv_move']:<9} | {row['price_move']:<11} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Dips increase uncertainty → IV rises.")
+    print("- IV rises → extrinsic expands.")
+    print("- Short-dated options inflate fastest.")
+    print("- LEAPS benefit from IV spikes during dips.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
     print("Regimes:", ", ".join(schema["regimes"].keys()))
     print_delta_surface(schema)
     print_iv_crush_panel(schema)
+    print_iv_spike_panel(schema)
 
 if __name__ == "__main__":
     main()

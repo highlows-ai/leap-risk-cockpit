@@ -23,6 +23,11 @@
     { "from": "volatile", "to": "calm",    "iv_move": "down_hard", "price_move": "up_medium" },
     { "from": "compress", "to": "calm",    "iv_move": "down_hard", "price_move": "up_strong" },
     { "from": "rate",     "to": "calm",    "iv_move": "down_small","price_move": "up_small" }
+  ],
+  "iv_spike_transitions": [
+    { "from": "calm", "to": "volatile", "iv_move": "up_hard", "price_move": "down_medium" },
+    { "from": "calm", "to": "compress", "iv_move": "up_hard", "price_move": "down_strong" },
+    { "from": "calm", "to": "rate",     "iv_move": "up_small","price_move": "down_small" }
   ]
 }
 

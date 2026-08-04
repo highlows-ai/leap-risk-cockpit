@@ -51,3 +51,17 @@ Notes:
 - IV falls → extrinsic value collapses.
 - Short-dated options suffer the worst crush.
 - LEAPS dampen crush but do not eliminate it.
+
+IV SPIKE PANEL
+-----------------------------------------
+| Regime Transition   | IV Move | Price |
+-----------------------------------------
+| calm → volatile     |   ↑↑↑   |  ↓↓   |
+| calm → compress     |   ↑↑↑   |  ↓↓↓  |
+| calm → rate         |   ↑     |  ↓    |
+-----------------------------------------
+Notes:
+- Dips increase uncertainty → IV rises.
+- IV rises → extrinsic expands.
+- Short-dated options inflate fastest.
+- LEAPS benefit from IV spikes during dips.
