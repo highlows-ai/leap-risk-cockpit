@@ -65,3 +65,32 @@ Notes:
 - IV rises → extrinsic expands.
 - Short-dated options inflate fastest.
 - LEAPS benefit from IV spikes during dips.
+
+GAMMA ACCELERATION PANEL
+-----------------------------------------
+| Time to Expiry | Gamma Level | Behavior        |
+-----------------------------------------
+| > 60 days      |   Low       | Stable          |
+| 30–60 days     |   Medium    | Rising          |
+| < 30 days      |   High      | Blowout Zone    |
+-----------------------------------------
+Notes:
+- Gamma accelerates as expiry approaches.
+- Delta becomes unstable in the blowout zone.
+- Short-dated options behave like leveraged spot.
+- LEAPS avoid gamma blowout entirely.
+
+DEEP ITM WING LIQUIDITY PANEL
+-----------------------------------------
+| Moneyness     | Delta  | Liquidity    |
+-----------------------------------------
+| Deep ITM      | 0.90–1 | High / Stable|
+| Near ITM      | 0.70–0.9| High        |
+| ATM           | ~0.50  | High / Active|
+| OTM           | <0.30  | Thin / Noisy |
+-----------------------------------------
+Notes:
+- Deep ITM wings behave like synthetic stock.
+- Liquidity is concentrated in deep ITM and near ITM.
+- OTM wings are noisy and thin.
+- LEAPS should live in the deep ITM wing.

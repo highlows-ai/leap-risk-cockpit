@@ -28,6 +28,17 @@
     { "from": "calm", "to": "volatile", "iv_move": "up_hard", "price_move": "down_medium" },
     { "from": "calm", "to": "compress", "iv_move": "up_hard", "price_move": "down_strong" },
     { "from": "calm", "to": "rate",     "iv_move": "up_small","price_move": "down_small" }
+  ],
+  "gamma_acceleration": [
+    { "time": ">60", "gamma": "low",    "behavior": "stable" },
+    { "time": "30-60", "gamma": "medium", "behavior": "rising" },
+    { "time": "<30", "gamma": "high",   "behavior": "blowout" }
+  ],
+  "wing_liquidity": [
+    { "moneyness": "deep_itm", "delta": "0.90–1.00", "liquidity": "high_stable" },
+    { "moneyness": "near_itm", "delta": "0.70–0.90", "liquidity": "high" },
+    { "moneyness": "atm",      "delta": "0.50",       "liquidity": "high_active" },
+    { "moneyness": "otm",      "delta": "<0.30",      "liquidity": "thin_noisy" }
   ]
 }
 

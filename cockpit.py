@@ -66,6 +66,39 @@ def print_iv_spike_panel(schema):
     print("- Short-dated options inflate fastest.")
     print("- LEAPS benefit from IV spikes during dips.")
 
+def print_gamma_acceleration_panel(schema):
+    print("\nGAMMA ACCELERATION PANEL")
+    print("-----------------------------------------")
+    print("| Time to Expiry | Gamma Level | Behavior        |")
+    print("-----------------------------------------")
+
+    for row in schema["gamma_acceleration"]:
+        print(f"| {row['time']:<13} | {row['gamma']:<11} | {row['behavior']:<14} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Gamma accelerates as expiry approaches.")
+    print("- Delta becomes unstable in the blowout zone.")
+    print("- Short-dated options behave like leveraged spot.")
+    print("- LEAPS avoid gamma blowout entirely.")
+
+def print_wing_liquidity_panel(schema):
+    print("\nDEEP ITM WING LIQUIDITY PANEL")
+    print("-----------------------------------------")
+    print("| Moneyness     | Delta       | Liquidity      |")
+    print("-----------------------------------------")
+
+    for row in schema["wing_liquidity"]:
+        print(f"| {row['moneyness']:<13} | {row['delta']:<11} | {row['liquidity']:<14} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Deep ITM wings behave like synthetic stock.")
+    print("- Liquidity is concentrated in deep ITM and near ITM.")
+    print("- ATM is active and tight.")
+    print("- OTM wings are thin and noisy.")
+    print("- LEAPS should live in the deep ITM wing.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -73,6 +106,8 @@ def main():
     print_delta_surface(schema)
     print_iv_crush_panel(schema)
     print_iv_spike_panel(schema)
+    print_gamma_acceleration_panel(schema)
+    print_wing_liquidity_panel(schema)
 
 if __name__ == "__main__":
     main()
