@@ -94,3 +94,18 @@ Notes:
 - Liquidity is concentrated in deep ITM and near ITM.
 - OTM wings are noisy and thin.
 - LEAPS should live in the deep ITM wing.
+
+SPREAD WIDENING UNDER STRESS PANEL
+-----------------------------------------
+| Stress Condition     | Spread Behavior |
+-----------------------------------------
+| Depth thinning       |   ↑↑            |
+| Quote decay          |   ↑↑↑           |
+| Volatility spike     |   ↑↑↑           |
+| Liquidity retreat    |   ↑↑↑           |
+-----------------------------------------
+Notes:
+- Spreads widen when information risk rises.
+- Quote decay is the earliest stress signal.
+- ATM short-dated options widen fastest.
+- Deep ITM LEAPS remain relatively stable.

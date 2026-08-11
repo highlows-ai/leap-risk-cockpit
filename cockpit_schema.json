@@ -39,6 +39,12 @@
     { "moneyness": "near_itm", "delta": "0.70–0.90", "liquidity": "high" },
     { "moneyness": "atm",      "delta": "0.50",       "liquidity": "high_active" },
     { "moneyness": "otm",      "delta": "<0.30",      "liquidity": "thin_noisy" }
+  ],
+  "spread_widening": [
+    { "condition": "depth_thinning", "spread": "up_medium" },
+    { "condition": "quote_decay", "spread": "up_hard" },
+    { "condition": "volatility_spike", "spread": "up_hard" },
+    { "condition": "liquidity_retreat", "spread": "up_hard" }
   ]
 }
 

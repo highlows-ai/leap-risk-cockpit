@@ -99,6 +99,22 @@ def print_wing_liquidity_panel(schema):
     print("- OTM wings are thin and noisy.")
     print("- LEAPS should live in the deep ITM wing.")
 
+def print_spread_widening_panel(schema):
+    print("\nSPREAD WIDENING UNDER STRESS PANEL")
+    print("-----------------------------------------")
+    print("| Stress Condition     | Spread Behavior |")
+    print("-----------------------------------------")
+
+    for row in schema["spread_widening"]:
+        print(f"| {row['condition']:<18} | {row['spread']:<15} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Spreads widen when information risk rises.")
+    print("- Quote decay is the earliest stress signal.")
+    print("- ATM short-dated options widen fastest.")
+    print("- Deep ITM LEAPS remain relatively stable.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -108,6 +124,7 @@ def main():
     print_iv_spike_panel(schema)
     print_gamma_acceleration_panel(schema)
     print_wing_liquidity_panel(schema)
+    print_spread_widening_panel(schema)
 
 if __name__ == "__main__":
     main()
