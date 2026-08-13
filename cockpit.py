@@ -115,6 +115,22 @@ def print_spread_widening_panel(schema):
     print("- ATM short-dated options widen fastest.")
     print("- Deep ITM LEAPS remain relatively stable.")
 
+def print_market_maker_hedging_panel(schema):
+    print("\nMARKET MAKER HEDGING PANEL")
+    print("-----------------------------------------")
+    print("| Hedge Type     | Behavior Under Stress |")
+    print("-----------------------------------------")
+
+    for row in schema["market_maker_hedging"]:
+        print(f"| {row['hedge']:<13} | {row['behavior']:<20} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Hedging drives short-term price action.")
+    print("- Gamma hedging becomes violent near expiry.")
+    print("- Vega hedging widens spreads during stress.")
+    print("- LEAPS require smoother, less frequent hedging.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -125,6 +141,7 @@ def main():
     print_gamma_acceleration_panel(schema)
     print_wing_liquidity_panel(schema)
     print_spread_widening_panel(schema)
+    print_market_maker_hedging_panel(schema)
 
 if __name__ == "__main__":
     main()

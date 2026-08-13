@@ -109,3 +109,18 @@ Notes:
 - Quote decay is the earliest stress signal.
 - ATM short-dated options widen fastest.
 - Deep ITM LEAPS remain relatively stable.
+
+MARKET MAKER HEDGING PANEL
+-----------------------------------------
+| Hedge Type     | Behavior Under Stress |
+-----------------------------------------
+| Delta          | Aggressive / Fast     |
+| Gamma          | Explosive / Unstable  |
+| Vega           | Wide / Defensive      |
+| Inventory      | Mean-reverting        |
+-----------------------------------------
+Notes:
+- Hedging drives short-term price action.
+- Gamma hedging becomes violent near expiry.
+- Vega hedging widens spreads during stress.
+- LEAPS require smoother, less frequent hedging.

@@ -45,6 +45,12 @@
     { "condition": "quote_decay", "spread": "up_hard" },
     { "condition": "volatility_spike", "spread": "up_hard" },
     { "condition": "liquidity_retreat", "spread": "up_hard" }
+  ],
+"market_maker_hedging": [
+    { "hedge": "delta", "behavior": "aggressive_fast" },
+    { "hedge": "gamma", "behavior": "explosive_unstable" },
+    { "hedge": "vega", "behavior": "wide_defensive" },
+    { "hedge": "inventory", "behavior": "mean_reverting" }
   ]
 }
 
