@@ -124,3 +124,19 @@ Notes:
 - Gamma hedging becomes violent near expiry.
 - Vega hedging widens spreads during stress.
 - LEAPS require smoother, less frequent hedging.
+
+EXIT CONDITIONS & SPREAD BEHAVIOR PANEL
+-----------------------------------------
+| Regime            | Spread | Exit Quality |
+-----------------------------------------
+| Calm              | Tight  | Excellent    |
+| Moderate Stress   | Medium | Good         |
+| High Stress       | Wide   | Poor         |
+| Gamma Blowout     | Very Wide | Dangerous |
+| Deep ITM Wing     | Stable | Excellent    |
+-----------------------------------------
+Notes:
+- Marks ≠ executable prices under stress.
+- Spreads widen when hedging becomes difficult.
+- Deep ITM LEAPS maintain stable exit conditions.
+- Avoid exits during gamma blowout windows.

@@ -51,6 +51,12 @@
     { "hedge": "gamma", "behavior": "explosive_unstable" },
     { "hedge": "vega", "behavior": "wide_defensive" },
     { "hedge": "inventory", "behavior": "mean_reverting" }
+  ],
+  "exit_conditions": [
+    { "regime": "calm", "spread": "tight", "quality": "excellent" },
+    { "regime": "moderate_stress", "spread": "medium", "quality": "good" },
+    { "regime": "high_stress", "spread": "wide", "quality": "poor" },
+    { "regime": "gamma_blowout", "spread": "very_wide", "quality": "dangerous" },
+    { "regime": "deep_itm_wing", "spread": "stable", "quality": "excellent" }
   ]
 }
-

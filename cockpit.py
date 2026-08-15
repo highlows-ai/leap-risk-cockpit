@@ -131,6 +131,22 @@ def print_market_maker_hedging_panel(schema):
     print("- Vega hedging widens spreads during stress.")
     print("- LEAPS require smoother, less frequent hedging.")
 
+def print_exit_conditions_panel(schema):
+    print("\nEXIT CONDITIONS & SPREAD BEHAVIOR PANEL")
+    print("-----------------------------------------")
+    print("| Regime            | Spread     | Exit Quality |")
+    print("-----------------------------------------")
+
+    for row in schema["exit_conditions"]:
+        print(f"| {row['regime']:<16} | {row['spread']:<10} | {row['quality']:<12} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Marks differ from executable prices under stress.")
+    print("- Spreads widen when hedging becomes difficult.")
+    print("- Deep ITM LEAPS maintain stable exit conditions.")
+    print("- Avoid exits during gamma blowout windows.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -142,6 +158,7 @@ def main():
     print_wing_liquidity_panel(schema)
     print_spread_widening_panel(schema)
     print_market_maker_hedging_panel(schema)
+    print_exit_conditions_panel(schema)
 
 if __name__ == "__main__":
     main()
