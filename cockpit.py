@@ -147,6 +147,22 @@ def print_exit_conditions_panel(schema):
     print("- Deep ITM LEAPS maintain stable exit conditions.")
     print("- Avoid exits during gamma blowout windows.")
 
+def print_calendar_roll_timing_panel(schema):
+    print("\nCALENDAR ROLL TIMING PANEL")
+    print("-----------------------------------------")
+    print("| Window          | Behavior            |")
+    print("-----------------------------------------")
+
+    for row in schema["calendar_roll_timing"]:
+        print(f"| {row['window']:<15} | {row['behavior']:<18} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Roll before gamma acceleration.")
+    print("- Roll before theta walls.")
+    print("- Avoid rolling during stress windows.")
+    print("- Deep ITM LEAPS roll cleanly in calm tape.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -159,6 +175,7 @@ def main():
     print_spread_widening_panel(schema)
     print_market_maker_hedging_panel(schema)
     print_exit_conditions_panel(schema)
+    print_calendar_roll_timing_panel(schema)
 
 if __name__ == "__main__":
     main()

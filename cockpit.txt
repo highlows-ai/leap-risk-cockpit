@@ -140,3 +140,18 @@ Notes:
 - Spreads widen when hedging becomes difficult.
 - Deep ITM LEAPS maintain stable exit conditions.
 - Avoid exits during gamma blowout windows.
+
+CALENDAR ROLL TIMING PANEL
+-----------------------------------------
+| Window          | Behavior            |
+-----------------------------------------
+| 120–90 days     | Optimal / Stable    |
+| 90–60 days      | Rising Gamma        |
+| <60 days        | Blowout Zone        |
+| Stress Regime   | Avoid Rolling       |
+-----------------------------------------
+Notes:
+- Roll before gamma acceleration.
+- Roll before theta walls.
+- Avoid rolling during stress windows.
+- Deep ITM LEAPS roll cleanly in calm tape.

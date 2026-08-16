@@ -58,5 +58,11 @@
     { "regime": "high_stress", "spread": "wide", "quality": "poor" },
     { "regime": "gamma_blowout", "spread": "very_wide", "quality": "dangerous" },
     { "regime": "deep_itm_wing", "spread": "stable", "quality": "excellent" }
+  ],
+  "calendar_roll_timing": [
+    { "window": "120-90", "behavior": "optimal_stable" },
+    { "window": "90-60",  "behavior": "rising_gamma" },
+    { "window": "<60",    "behavior": "blowout_zone" },
+    { "window": "stress", "behavior": "avoid_rolling" }
   ]
 }
