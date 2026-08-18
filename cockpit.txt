@@ -155,3 +155,18 @@ Notes:
 - Roll before theta walls.
 - Avoid rolling during stress windows.
 - Deep ITM LEAPS roll cleanly in calm tape.
+
+STRIKE MIGRATION & DELTA PRESERVATION PANEL
+-----------------------------------------
+| Phenomenon        | Behavior           |
+-----------------------------------------
+| Strike Migration  | Strike becomes label
+| Delta Preservation| Delta becomes anchor
+| Intrinsic Dominance| Option ≈ Δ·Stock
+| Deep ITM Wing     | Stable liquidity
+-----------------------------------------
+Notes:
+- Strike matters less as intrinsic dominates.
+- Delta is the true exposure market makers hedge.
+- LEAPS migrate toward synthetic stock behavior.
+- Stable delta = stable liquidity and spreads.

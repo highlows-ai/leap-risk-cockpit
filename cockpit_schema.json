@@ -64,5 +64,11 @@
     { "window": "90-60",  "behavior": "rising_gamma" },
     { "window": "<60",    "behavior": "blowout_zone" },
     { "window": "stress", "behavior": "avoid_rolling" }
+  ],
+  "strike_migration": [
+    { "phenomenon": "strike_migration", "behavior": "strike_becomes_label" },
+    { "phenomenon": "delta_preservation", "behavior": "delta_becomes_anchor" },
+    { "phenomenon": "intrinsic_dominance", "behavior": "Option_≈_Δ·Stock" },
+    { "phenomenon": "deep_ITM_wing", "behavior": "stable_liquidity" }
   ]
 }

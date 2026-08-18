@@ -163,6 +163,22 @@ def print_calendar_roll_timing_panel(schema):
     print("- Avoid rolling during stress windows.")
     print("- Deep ITM LEAPS roll cleanly in calm tape.")
 
+def print_strike_migration_panel(schema):
+    print("\nSTRIKE MIGRATION PANEL")
+    print("-----------------------------------------")
+    print("| Phenomenon      | Behavior            |")
+    print("-----------------------------------------")
+
+    for row in schema["strike_migration"]:
+        print(f"| {row['phenomenon']:<15} | {row['behavior']:<18} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Strike matters less as intrinsic dominates.")
+    print("- Delta is the true exposure market makers hedge.")
+    print("- LEAPS migrate toward synthetic stock behavior.")
+    print("- Stable delta = stable liquidity and spreads.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -176,6 +192,7 @@ def main():
     print_market_maker_hedging_panel(schema)
     print_exit_conditions_panel(schema)
     print_calendar_roll_timing_panel(schema)
+    print_strike_migration_panel(schema)
 
 if __name__ == "__main__":
     main()
