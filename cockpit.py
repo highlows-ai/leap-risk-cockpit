@@ -179,6 +179,22 @@ def print_strike_migration_panel(schema):
     print("- LEAPS migrate toward synthetic stock behavior.")
     print("- Stable delta = stable liquidity and spreads.")
 
+def print_roll_slippage_cost_drift_panel(schema):
+    print("\nROLL SLIPPAGE & COST DRIFT PANEL")
+    print("-----------------------------------------")
+    print("| Phenomenon       | Behavior            |")
+    print("-----------------------------------------")
+
+    for row in schema["roll_slippage_cost_drift"]:
+        print(f"| {row['phenomenon']:<15} | {row['behavior']:<18} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Roll slippage = short-term friction from spreads and stress.")
+    print("- Cost drift = long-term structural movement from theta and term structure.")
+    print("- LEAPS have low slippage due to stable delta and deep ITM liquidity.")
+    print("- Managing calendar windows controls cost drift.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -193,6 +209,7 @@ def main():
     print_exit_conditions_panel(schema)
     print_calendar_roll_timing_panel(schema)
     print_strike_migration_panel(schema)
+    print_roll_slippage_cost_drift_panel(schema)
 
 if __name__ == "__main__":
     main()

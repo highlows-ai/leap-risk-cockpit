@@ -170,3 +170,19 @@ Notes:
 - Delta is the true exposure market makers hedge.
 - LEAPS migrate toward synthetic stock behavior.
 - Stable delta = stable liquidity and spreads.
+
+ROLL SLIPPAGE & COST DRIFT PANEL
+-----------------------------------------
+| Phenomenon       | Behavior            |
+-----------------------------------------
+| Roll Slippage    | Short-term friction |
+| Cost Drift       | Long-term movement  |
+| Spread Widening  | Increases slippage  |
+| Term Structure   | Drives drift        |
+| Delta Migration  | Stabilizes drift    |
+-----------------------------------------
+Notes:
+- Roll slippage = avoid stress windows.
+- Cost drift = manage calendar windows.
+- LEAPS have low slippage due to stable delta.
+- Deep ITM wings reduce roll friction.

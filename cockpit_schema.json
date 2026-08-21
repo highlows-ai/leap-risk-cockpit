@@ -70,5 +70,12 @@
     { "phenomenon": "delta_preservation", "behavior": "delta_becomes_anchor" },
     { "phenomenon": "intrinsic_dominance", "behavior": "Option_≈_Δ·Stock" },
     { "phenomenon": "deep_ITM_wing", "behavior": "stable_liquidity" }
+  ],
+  "roll_slippage_cost_drift": [
+    { "phenomenon": "roll_slippage", "behavior": "short_term_friction" },
+    { "phenomenon": "cost_drift", "behavior": "long_term_movement" },
+    { "phenomenon": "spread_widening", "behavior": "increases_slippage" },
+    { "phenomenon": "term_structure", "behavior": "drives_drift" },
+    { "phenomenon": "delta_migration", "behavior": "stabilizes_drift" }
   ]
 }
