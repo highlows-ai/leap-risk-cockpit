@@ -84,5 +84,12 @@
     { "metric": "cost_drift", "behavior": "multi_year_trend" },
     { "metric": "delta_preservation", "behavior": "exposure_stability" },
     { "metric": "regime_context", "behavior": "vol_liquidity_map" }
+  ],
+  "dividend_impact": [
+    { "metric": "dividend_yield", "behavior": "reduces_call_value" },
+    { "metric": "forward_adjustment", "behavior": "lowers_forward_price" },
+    { "metric": "delta_adjustment", "behavior": "reduces_delta" },
+    { "metric": "synthetic_drag", "behavior": "reduces_synthetic_exposure" },
+    { "metric": "put_skew", "behavior": "increases_put_value" }
   ]
 }

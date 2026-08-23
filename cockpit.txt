@@ -203,3 +203,20 @@ Notes:
 - Cost drift = long-term change in average roll cost.
 - Delta preservation = how closely LEAPS track stock over time.
 - Regime context = which volatility/liquidity regime each roll occurred in.
+
+DIVIDEND IMPACT PANEL
+-----------------------------------------
+| Metric             | Behavior          |
+-----------------------------------------
+| dividend_yield     | reduces_call_value |
+| forward_adjustment | lowers_forward_price |
+| delta_adjustment   | reduces_delta      |
+| synthetic_drag     | reduces_synthetic_exposure |
+| put_skew           | increases_put_value |
+-----------------------------------------
+Notes:
+- Dividends reduce call value because the stock drops on ex-div.
+- Forward price adjusts downward by PV(dividends).
+- Delta decreases because calls become less stock-like.
+- Synthetic exposure drifts lower unless adjusted.
+- Puts gain value, increasing put skew.

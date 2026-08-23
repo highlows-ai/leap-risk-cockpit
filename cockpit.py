@@ -212,6 +212,23 @@ def print_roll_mechanics_monitoring_panel(schema):
     print("- Delta preservation = how closely LEAPS track stock over time.")
     print("- Regime context = volatility/liquidity state at each roll.")
 
+def print_dividend_impact_panel(schema):
+    print("\nDIVIDEND IMPACT PANEL")
+    print("-----------------------------------------")
+    print("| Metric             | Behavior          |")
+    print("-----------------------------------------")
+
+    for row in schema["dividend_impact"]:
+        print(f"| {row['metric']:<18} | {row['behavior']:<18} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Dividends reduce call value because the stock drops on ex-div.")
+    print("- Forward price adjusts downward by PV(dividends).")
+    print("- Delta decreases because calls become less stock-like.")
+    print("- Synthetic exposure drifts lower unless adjusted.")
+    print("- Puts gain value, increasing put skew.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -228,6 +245,7 @@ def main():
     print_strike_migration_panel(schema)
     print_roll_slippage_cost_drift_panel(schema)
     print_roll_mechanics_monitoring_panel(schema)
+    print_dividend_impact_panel(schema)
 
 if __name__ == "__main__":
     main()
