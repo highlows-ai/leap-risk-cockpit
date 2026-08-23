@@ -77,5 +77,12 @@
     { "phenomenon": "spread_widening", "behavior": "increases_slippage" },
     { "phenomenon": "term_structure", "behavior": "drives_drift" },
     { "phenomenon": "delta_migration", "behavior": "stabilizes_drift" }
+  ],
+  "roll_mechanics_monitoring": [
+    { "metric": "synthetic_exposure", "behavior": "delta_contracts_notional" },
+    { "metric": "roll_slippage", "behavior": "per_roll_friction" },
+    { "metric": "cost_drift", "behavior": "multi_year_trend" },
+    { "metric": "delta_preservation", "behavior": "exposure_stability" },
+    { "metric": "regime_context", "behavior": "vol_liquidity_map" }
   ]
 }

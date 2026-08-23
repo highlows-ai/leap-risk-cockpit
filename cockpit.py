@@ -195,6 +195,23 @@ def print_roll_slippage_cost_drift_panel(schema):
     print("- LEAPS have low slippage due to stable delta and deep ITM liquidity.")
     print("- Managing calendar windows controls cost drift.")
 
+def print_roll_mechanics_monitoring_panel(schema):
+    print("\nROLL MECHANICS PANEL: MONITORING SYNTHETIC EXPOSURE")
+    print("-----------------------------------------")
+    print("| Metric             | Behavior          |")
+    print("-----------------------------------------")
+
+    for row in schema["roll_mechanics_monitoring"]:
+        print(f"| {row['metric']:<18} | {row['behavior']:<18} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Synthetic exposure = delta × contracts × 100.")
+    print("- Roll slippage = short-term friction at each calendar roll.")
+    print("- Cost drift = long-term trend in roll cost across years.")
+    print("- Delta preservation = how closely LEAPS track stock over time.")
+    print("- Regime context = volatility/liquidity state at each roll.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -210,6 +227,7 @@ def main():
     print_calendar_roll_timing_panel(schema)
     print_strike_migration_panel(schema)
     print_roll_slippage_cost_drift_panel(schema)
+    print_roll_mechanics_monitoring_panel(schema)
 
 if __name__ == "__main__":
     main()

@@ -186,3 +186,20 @@ Notes:
 - Cost drift = manage calendar windows.
 - LEAPS have low slippage due to stable delta.
 - Deep ITM wings reduce roll friction.
+
+ROLL MECHANICS PANEL: MONITORING SYNTHETIC EXPOSURE
+-----------------------------------------
+| Metric             | Behavior          |
+-----------------------------------------
+| Synthetic_Exposure | Δ·contracts·100   |
+| Roll_Slippage      | per_roll_friction |
+| Cost_Drift         | multi_year_trend  |
+| Delta_Preservation | exposure_stability|
+| Regime_Context     | vol/liquidity map |
+-----------------------------------------
+Notes:
+- Synthetic exposure = delta × contracts × 100.
+- Roll slippage = short-term friction at each calendar roll.
+- Cost drift = long-term change in average roll cost.
+- Delta preservation = how closely LEAPS track stock over time.
+- Regime context = which volatility/liquidity regime each roll occurred in.
