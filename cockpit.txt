@@ -220,3 +220,10 @@ Notes:
 - Delta decreases because calls become less stock-like.
 - Synthetic exposure drifts lower unless adjusted.
 - Puts gain value, increasing put skew.
+
+Dividends reduce the forward price.
+Lower forward compresses crash-wing IV.
+Lower crash-wing IV reduces catastrophic downside.
+Lower catastrophic downside stabilizes gamma.
+Stable gamma stabilizes delta.
+Stable delta stabilizes synthetic exposure.

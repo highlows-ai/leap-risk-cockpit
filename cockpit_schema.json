@@ -91,5 +91,12 @@
     { "metric": "delta_adjustment", "behavior": "reduces_delta" },
     { "metric": "synthetic_drag", "behavior": "reduces_synthetic_exposure" },
     { "metric": "put_skew", "behavior": "increases_put_value" }
+  ],
+  "dividends_catastrophe": [
+    { "metric": "forward_compression", "behavior": "reduces_crash_geometry" },
+    { "metric": "fixed_dollar_crash", "behavior": "smaller_pct_loss_for_div_stocks" },
+    { "metric": "fixed_pct_crash", "behavior": "smaller_dollar_loss_for_div_stocks" },
+    { "metric": "model_multicollinearity", "behavior": "defensive_features_reinforced" },
+    { "metric": "leaps_microstructure", "behavior": "mechanically_more_defensive" }
   ]
 }

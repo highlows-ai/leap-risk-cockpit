@@ -229,6 +229,23 @@ def print_dividend_impact_panel(schema):
     print("- Synthetic exposure drifts lower unless adjusted.")
     print("- Puts gain value, increasing put skew.")
 
+def print_dividends_catastrophe_panel(schema):
+    print("\nDIVIDENDS & CATASTROPHE DOWNSIDE PANEL")
+    print("-----------------------------------------")
+    print("| Metric             | Behavior          |")
+    print("-----------------------------------------")
+
+    for row in schema["dividends_catastrophe"]:
+        print(f"| {row['metric']:<18} | {row['behavior']:<24} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Forward compression reduces available crash geometry.")
+    print("- With static $ downside, div stocks show smaller % losses.")
+    print("- With static % downside, div stocks fall less in $ terms.")
+    print("- Multicollinearity across models reinforces defensive features.")
+    print("- Dividend-paying stocks have mechanically more defensive LEAPS microstructure.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -246,6 +263,7 @@ def main():
     print_roll_slippage_cost_drift_panel(schema)
     print_roll_mechanics_monitoring_panel(schema)
     print_dividend_impact_panel(schema)
+    print_dividends_catastrophe_panel(schema)
 
 if __name__ == "__main__":
     main()
