@@ -98,5 +98,24 @@
     { "metric": "fixed_pct_crash", "behavior": "smaller_dollar_loss_for_div_stocks" },
     { "metric": "model_multicollinearity", "behavior": "defensive_features_reinforced" },
     { "metric": "leaps_microstructure", "behavior": "mechanically_more_defensive" }
+  ],
+  "underlying_dividend_classification": [
+    { "bucket": "zero_dividend", "behavior": "pure_volatility_asset" },
+    { "bucket": "low_dividend", "behavior": "mixed_carry_growth" },
+    { "bucket": "high_dividend", "behavior": "defensive_carry_asset" },
+    { "bucket": "ultra_high_dividend", "behavior": "carry_dominated_asset" }
+  ],
+  "dividend_decision_tree": [
+    { "node": "pays_dividends", "branch": "yes_no" },
+    { "node": "yield_band", "branch": "small_medium_high_ultra" },
+    { "node": "predictability", "branch": "stable_or_unstable" },
+    { "node": "within_leaps_life", "branch": "yes_or_no" }
+  ],
+  "synthetic_vs_actual_carry": [
+    { "metric": "actual_carry", "behavior": "real_dividend_cash_flow" },
+    { "metric": "synthetic_carry", "behavior": "model_implied_dividend_effect" },
+    { "metric": "forward_impact", "behavior": "reduces_forward_price" },
+    { "metric": "iv_stabilization", "behavior": "compresses_crash_geometry" },
+    { "metric": "leaps_microstructure", "behavior": "stabilizes_delta_gamma_vega" }
   ]
 }

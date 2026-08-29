@@ -246,6 +246,55 @@ def print_dividends_catastrophe_panel(schema):
     print("- Multicollinearity across models reinforces defensive features.")
     print("- Dividend-paying stocks have mechanically more defensive LEAPS microstructure.")
 
+def print_underlying_dividend_classification_panel(schema):
+    print("\nUNDERLYING DIVIDEND CLASSIFICATION PANEL")
+    print("-----------------------------------------")
+    print("| Bucket             | Behavior          |")
+    print("-----------------------------------------")
+
+    for row in schema["underlying_dividend_classification"]:
+        print(f"| {row['bucket']:<18} | {row['behavior']:<24} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Zero-dividend: pure volatility assets (tech, growth).")
+    print("- Low-dividend: mixed carry + growth (industrials, financials).")
+    print("- High-dividend: defensive carry assets (utilities, staples).")
+    print("- Ultra-high-dividend: carry-dominated (REITs, MLPs, high-yield).")
+
+def print_dividend_decision_tree_panel(schema):
+    print("\nDIVIDEND DECISION TREE PANEL")
+    print("-----------------------------------------")
+    print("| Node               | Branch            |")
+    print("-----------------------------------------")
+
+    for row in schema["dividend_decision_tree"]:
+        print(f"| {row['node']:<18} | {row['branch']:<24} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- First: does the underlying pay dividends at all?")
+    print("- Then: classify yield band (small/medium/high/ultra).")
+    print("- Then: are dividends predictable or unstable?")
+    print("- Finally: do dividends occur within the LEAPS life?")
+
+def print_synthetic_vs_actual_carry_panel(schema):
+    print("\nSYNTHETIC VS ACTUAL CARRY PANEL")
+    print("-----------------------------------------")
+    print("| Metric             | Behavior          |")
+    print("-----------------------------------------")
+
+    for row in schema["synthetic_vs_actual_carry"]:
+        print(f"| {row['metric']:<18} | {row['behavior']:<28} |")
+
+    print("-----------------------------------------")
+    print("Notes:")
+    print("- Actual carry = real dividends paid by the underlying.")
+    print("- Synthetic carry = pricing adjustment via put-call parity and forwards.")
+    print("- Both reduce forward price and calm the IV surface.")
+    print("- Both compress crash geometry and stabilize LEAPS behavior.")
+    print("- Result: more defensive, stable synthetic exposure for dividend names.")
+
 def main():
     schema = load_schema()
     print("LEAP RISK COCKPIT —", schema["underlying"])
@@ -264,6 +313,10 @@ def main():
     print_roll_mechanics_monitoring_panel(schema)
     print_dividend_impact_panel(schema)
     print_dividends_catastrophe_panel(schema)
+    print_underlying_dividend_classification_panel(schema)
+    print_dividend_decision_tree_panel(schema)
+    print_synthetic_vs_actual_carry_panel(schema)
+
 
 if __name__ == "__main__":
     main()
